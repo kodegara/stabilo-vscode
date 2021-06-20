@@ -1,0 +1,79 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Gara",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		},
+        {
+            "match": "\\bnil\\b(?![?!])",
+            "name": "constant.language.nil.gara"
+        },
+		{
+			"captures": {
+			  "1": { "name": "punctuation.definition.variable.gara" }
+			},
+			"match": "(\\$)(!|@|&|`|'|\\+|\\d+|~|=|/|\\\\|,|;|\\.|<|>|_|\\*|\\$|\\?|:|\"|-[0adFiIlpv])",
+			"name": "variable.other.readwrite.global.pre-defined.gara"
+		},
+		{
+			"match": "\\b[A-Z]\\w*(?=((\\.|::)[A-Za-z]|\\[))",
+			"name": "support.class.gara"
+		},
+		{
+			"match": "\\b[_A-Z]\\w*\\b",
+			"name": "variable.other.constant.gara"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"begin": "//",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.gara"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.double-slash.gara"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.gara",
+				"match": "\\b(fn|ada|benar|salah|nil|jika|lain|utus|tuntut|selama|kelas|itu|ini|coba|tahan|lalu|dari|putus|pribadi|fAnanta|fNaN|sta|super|lewat|hal|abs|lempar)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.gara",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gara",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"match": "(?x)\n(?<!\\$)\n(\n  \\b[0-9]([0-9_]*[0-9])?\\.\\B(?!\\.)\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([0-9]([0-9_]*[0-9])?)([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  (?<!\\.)\\B\\.[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b(0|[1-9]([0-9_]*[0-9])?)(?!\\.)[Ll]?\\b\n)\n(?!\\$)",
+					"name": "constant.numeric.decimal.gara"
+				}
+			]
+		}
+	},
+	"scopeName": "source.gara"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "gara-syntax-highlighter",
+    "displayName": "Syntax Highlighter for Gara",
+    "description": "Syntax highlighter for the Gara programming language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.56.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gara",
+            "aliases": ["Gara", "gara"],
+            "extensions": [".gr"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gara",
+            "scopeName": "source.gara",
+            "path": "./syntaxes/gara.tmLanguage.json"
+        }]
+    }
+}
