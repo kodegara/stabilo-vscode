@@ -52,7 +52,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.gara",
-				"match": "\\b(fn|ada|benar|salah|nil|jika|lain|utus|tuntut|selama|kelas|kelak|itu|ini|coba|tahan|lalu|dari|putus|pribadi|fAnanta|fNaN|sta|punca|lewat|hal|abs|lempar|galur|tetap|usai)\\b"
+				"match": "\\b(fn|ada|benar|salah|nil|jika|lain|utus|tuntut|selama|kelas|kelak|itu|ini|coba|tahan|lalu|dari|putus|pribadi|fAnanta|fNaN|sta|punca|lewat|hal|abs|lempar|galur|tetap|usai|modul|sisip|fana)\\b"
 			}]
 		},
 		"strings": {
